@@ -30,15 +30,11 @@ To copy the artifact into the correct place, you can call
 This will not only copy your artifact, but also all the dependencies. Restart
 your ImageJ or call *Help>Refresh Menus* to see your plugin in the menus.
 
-Developing plugins in an IDE is convenient, especially for debugging. To
-that end, the plugin contains a `main` method which sets the `plugins.dir`
-system property (so that the plugin is added to the Plugins menu), starts
-ImageJ, loads an image and runs the plugin. See also
+Developing plugins in an IDE is convenient, especially for debugging. To that
+end, the plugin contains a `main` method which starts ImageJ and runs the
+plugin. See also
 [this page](https://imagej.net/Debugging#Debugging_plugins_in_an_IDE_.28Netbeans.2C_IntelliJ.2C_Eclipse.2C_etc.29)
 for information how ImageJ makes it easier to debug in IDEs.
-
-Since this project is intended as a starting point for your own
-developments, it is in the public domain.
 
 How to use this project as a starting point
 ===========================================
