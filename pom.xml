@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>17.1.1</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.mycompany</groupId>
+	<artifactId>Simple_Read</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+
+	<name>Bio-Formats Simple Reader</name>
+	<description>A Maven project implementing an ImageJ 1.x plugin using Bio-Formats with Java 6.</description>
+	<url>http://mycompany.com/imagej/bio-formats-reader/</url>
+	<inceptionYear>2017</inceptionYear>
+	<organization>
+		<name>My Company</name>
+		<url>http://mycompany.com/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>GNU General Public License v2+</name>
+			<url>https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>your-id-here</id>
+			<name>Your Name Here</name>
+			<url>http://imagej.net/User:YourWikiUsername</url>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Someone Who Contributed</name>
+			<url>http://imagej.net/User:TheirWikiUsername</url>
+			<properties><id>their-id</id></properties>
+		</contributor>
+	</contributors>
+
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>scm:git:git://github.com/imagej/example-bio-formats-legacy-plugin</connection>
+		<developerConnection>scm:git:git@github.com:imagej/example-bio-formats-legacy-plugin</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/imagej/example-bio-formats-legacy-plugin</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/imagej/example-bio-formats-legacy-plugin/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>None</system>
+	</ciManagement>
+
+	<properties>
+		<package-name>com.mycompany.imagej</package-name>
+		<main-class>com.mycompany.imagej.Simple_Read</main-class>
+		<license.licenseName>gpl_v2</license.licenseName>
+		<license.copyrightOwners>My Company, Inc.</license.copyrightOwners>
+
+		<!-- Use Java 6 instead of Java 8. -->
+		<scijava.jvm.version>1.6</scijava.jvm.version>
+
+		<!-- Override component versions to select Java-6-compatible versions. -->
+		<ij.version>1.51q</ij.version>
+		<bio-formats.version>5.1.10</bio-formats.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>imagej.public</id>
+			<url>https://maven.imagej.net/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<!-- ImageJ 1.x dependency -->
+		<dependency>
+			<groupId>net.imagej</groupId>
+			<artifactId>ij</artifactId>
+		</dependency>
+
+		<!-- Bio-Formats dependencies -->
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>bio-formats_plugins</artifactId>
+			<exclusions>
+				<!-- NB: Guava requires Java 7+, so we exclude it here. -->
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>ome</groupId>
+			<artifactId>formats-api</artifactId>
+		</dependency>
+	</dependencies>
+</project>
